@@ -33,31 +33,34 @@ const player = {
         player.n+=1
         if(player.n>string.length){
             window.clearInterval(player.id)
+            return
         }
-        demo.innerText = string.substr(0,player.n)
-        demo2.innerHTML =string.substr(0,player.n)
-        demo.scrollTo(0,9999)
+        player.ui.demo.innerText = string.substr(0,player.n)
+        player.ui.demo2.innerHTML =string.substr(0,player.n)
+        player.ui.demo.scrollTo(0,9999)
     },
     play:()=>{
         window.clearInterval(player.id)
         player.id = setInterval(player.run,player.time)
     },
     pause:()=>{
+        console.log('pause')
         window.clearInterval(player.id)
     },
     slow:()=>{
+        player.pause()
         player.time = 300
-        player.id = player.play()
+        player.play()
     },
     normal: ()=>{
         player.pause()
         player.time=100
-        player.id = player.play()
+        player.play()
     },
     fast:()=>{
         player.pause()
         player.time = 0
-        player.id = player.play()
+        player.play()
     }
 }
 
