@@ -1,18 +1,4 @@
-const string = `.skin * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.skin *::after {
-    box-sizing: border-box;
-}
-
-.skin *::before {
-    box-sizing: border-box;
-}
-
-.skin {
+const string = `.skin {
     position: relative;
     background: #ffe500;
     height: 50vh;
